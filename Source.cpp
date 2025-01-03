@@ -30,7 +30,9 @@ void funcConstantExamples(); //Different types of Constant operations
 void funcArrayExamples();// Example of Different Types of Array 
 void funcEnumExamples(); //Example of Enum data types
 
-void funcStructExamples();//Example of Differet type of St
+void funcStructExamples();//Example of Different type of St
+
+void funcPointerExamples(); //Example of Different types of Pointers
 
 
 //Main Funtion 
@@ -46,6 +48,9 @@ int main()
 
 	// Start Other Function implementation -----------------
 	
+	//Example of Different types of Pointers
+	funcPointerExamples(); 
+
 	//Example of Differet type of St
 	funcStructExamples();
 
@@ -96,6 +101,40 @@ int main()
 	//Scope of the Variable, which is declare inside the Cury Bras, will scope with the Curly Bras
 
 }
+
+//Example of Different types of Pointers
+struct Container
+{
+	string Name;
+
+	int x;
+	int y;
+	int z;
+};
+
+void funcPointerExamples()
+{
+
+	//Pointer Example 1
+	int myint1 = 122;
+	int* ptr1;
+	ptr1 = & myint1;
+
+	cout << "Pointer: " << ptr1 << endl;//Pointer of the Variable
+	cout << "MyInt = : " << myint1 << endl; //Direct Value access
+	cout << "& MyInt = " << &myint1 << endl; // Pointer of the Variable
+	cout << "* ptr1 = " << * ptr1 << endl; // De Refrencing the pointer to access the variable.
+
+
+	//Pointer Example 2
+	Container cnt1 = { "Raghu", 1, 2, 3 };
+	Container* ptrCnt1 = &cnt1;
+
+	cout << "1- Struct Pointer=" << ptrCnt1->Name << endl;
+	cout << "2- Struct Pointer=" << (*ptrCnt1).Name << endl;
+
+}
+
 
 //Example of Differet type of Structure
 	struct LocationVect
